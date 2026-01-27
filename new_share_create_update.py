@@ -10,9 +10,10 @@ import openpyxl as xl
 from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.dimensions import DimensionHolder, ColumnDimension
-from constants import SYMBOL_DATA_API, HEADERS, SHARE_LIST
+from constants import SYMBOL_DATA_API, HEADERS, SHARE_LIST, COPY_TO_CASH, BASE_FOLDER_PATH, EQ_SYMBOLS
 from utils import get_duration_params
 
+SHARE_LIST = EQ_SYMBOLS # since update is not done for NIFTY an BN
 
 add_share_list = {'ETERNAL':1304833, 'HEROMOTOCO': 345089, 'LTF': 6386689, 'PAYTM': 1716481, 'JIOFIN': 4644609, 'BSE': 5013761}
 add_share_list = {}
@@ -792,12 +793,23 @@ def closing_update():
         print(f'{share} done')
 
 # daily_create()
-weekly_create()
-monthly_create()
-closing_create()
+# weekly_create()
+# monthly_create()
+# closing_create()
 # weekly_update()
 # monthly_update()
 # closing_update()
+
+
+for symbol in COPY_TO_CASH:
+    file_daily = rf"{BASE_FOLDER_PATH}\DAILY\{symbol}.xlsx"
+    file_daily_cash = rf"{BASE_FOLDER_PATH}\CASH\{symbol}.xlsx"
+    file_daily_raghav = rf"C:\Users\RITIK\Desktop\STUDY MATERIAL\CASH\DAILY\{symbol}.xlsx"
+    file_daily_cash_raghav = rf"C:\Users\RITIK\Desktop\STUDY MATERIAL\CASH\{symbol}.xlsx"
+
+    shutil.copy(file_daily, file_daily_cash)
+    shutil.copy(file_daily_raghav, file_daily_cash_raghav)
+
 
 # algo_copy_to_cash_list = ['02 ABB', 'ASHOKLEY', 'BHEL', '05 DIXON', 'ONGC', '10 RECLTD']
 #

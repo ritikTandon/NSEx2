@@ -1,6 +1,8 @@
 from datetime import datetime
 
-from constants import DATE
+from openpyxl.styles import Border, Side
+
+from constants import DATE, bold, alignment
 import pandas as pd
 
 def get_duration_params(from_datetime, to_datetime):
@@ -48,3 +50,15 @@ def get_fut_instrument_token(df: pd.DataFrame, is_expiry_today=False):
             result[row["tradingsymbol"]] = int(row["instrument_token"])
 
     return result
+
+
+def add_missing_row(sheet, insert_row, date):
+    """
+    Add missing rows in scenarios where market is open on holidays
+    """
+    sheet.insert_rows(insert_row)   # row number where row will be inserted (this row will shift down)
+    sheet.cell(insert_row, 1).value = date # Ex datetime(2026, 2, 1)
+    sheet.cell(insert_row, 1).border = Border(right=Side(style='thin'))
+    sheet.cell(insert_row, 1).number_format = "DD-MMM-YY"
+    sheet.cell(insert_row, 1).font = bold
+    sheet.cell(insert_row, 1).alignment = alignment
