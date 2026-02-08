@@ -190,10 +190,9 @@ for symbol in SHARE_LIST:
                 close_925 = close_cell.value
 
         # Save the file
-        if symbol not in FO_SYMBOLS:
-            file_name = rf"{BASE_FOLDER_PATH}\1 MINUTE\{YEAR}\{MONTH}\{DATE}\{symbol}.xlsx"
-            wb.save(file_name)
-            print(f"{symbol} 1 MIN")
+        file_name = rf"{BASE_FOLDER_PATH}\1 MINUTE\{YEAR}\{MONTH}\{DATE}\{symbol}.xlsx"
+        wb.save(file_name)
+        print(f"{symbol} 1 MIN")
 
         # 15 and 30 min
         start_date = f"{(datetime.datetime.strptime(DATE, '%d.%m.%y') - datetime.timedelta(days=5)).strftime('%d.%m.%y')}"
