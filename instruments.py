@@ -46,4 +46,4 @@ response = requests.get(FO_INSTRUMENTS_URL, headers=HEADERS)
 ds = io.StringIO(response.text)
 df = pd.read_csv(ds)
 df.to_excel(f'FO_instruments{datetime.now().strftime("%d-%m-%Y")}.xlsx', index=False)
-print(get_fut_instrument_token(df, is_expiry_today=True))
+print(get_fut_instrument_token(df, is_expiry_today=False))  # make it true only on day of expiry

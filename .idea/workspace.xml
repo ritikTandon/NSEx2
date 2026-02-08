@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="090927f3-1c0c-4ef5-8dcd-272431b2a5ad" name="Changes" comment="first">
+    <list default="true" id="090927f3-1c0c-4ef5-8dcd-272431b2a5ad" name="Changes" comment="modification">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ltp_prev.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ltp_prev.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daily_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instruments.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new_share_create_update.py" beforeDir="false" afterPath="$PROJECT_DIR$/new_share_create_update.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
@@ -50,24 +53,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.constants.executor": "Run",
-    "Python.daily_data.executor": "Run",
-    "Python.instruments.executor": "Run",
-    "Python.login.executor": "Run",
-    "Python.new_share_create.executor": "Run",
-    "Python.new_share_create_update.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/RITIK/PycharmProjects/NSEexCopy",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.constants.executor&quot;: &quot;Run&quot;,
+    &quot;Python.daily_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.instruments.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ltp_prev.executor&quot;: &quot;Run&quot;,
+    &quot;Python.new_share_create.executor&quot;: &quot;Run&quot;,
+    &quot;Python.new_share_create_update.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/RITIK/PycharmProjects/NSEexCopy&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\RITIK\PycharmProjects\NseEx2" />
@@ -97,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769465969074</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modification">
+      <option name="closed" value="true" />
+      <created>1769518893465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1769518893465</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -116,6 +128,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification" />
   </component>
 </project>

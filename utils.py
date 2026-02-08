@@ -1,9 +1,10 @@
 from datetime import datetime
-
+import shelve
 from openpyxl.styles import Border, Side
-
-from constants import DATE, bold, alignment
+from constants import DATE, bold, alignment, MAX_POINTS
 import pandas as pd
+import os
+from urllib.parse import quote
 
 def get_duration_params(from_datetime, to_datetime):
     """
@@ -62,3 +63,7 @@ def add_missing_row(sheet, insert_row, date):
     sheet.cell(insert_row, 1).number_format = "DD-MMM-YY"
     sheet.cell(insert_row, 1).font = bold
     sheet.cell(insert_row, 1).alignment = alignment
+
+
+def sanitize_url(url: str) -> str:
+    return quote(url, safe=":/?=#")

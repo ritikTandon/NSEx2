@@ -5,7 +5,8 @@ import os, requests, logging, pandas as pd, io, json, datetime
 from openpyxl.utils import get_column_letter
 
 from constants import SYMBOL_DATA_API, HEADERS, EQ_SYMBOLS, DATE, FO_SYMBOLS, BASE_FOLDER_PATH, MONTH, YEAR, APPEND, \
-    NO_FORMAT_LIST, FIXED_WIDTH, blue, alignment, red, bold, COPY_TO_CASH, SHARE_LIST
+    NO_FORMAT_LIST, FIXED_WIDTH, blue, alignment, red, bold, COPY_TO_CASH, SHARE_LIST, FO_SYMBOLS_WITH_EXPIRY, \
+    LTP_DATA_API, LTP_PREV_PATH
 from utils import get_duration_params
 from openpyxl import Workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
@@ -23,6 +24,10 @@ kite.set_access_token(access_token)
 
 start_row = 9
 start_col = 6  # Column F
+idx = 2   # ltp prev sheet iterator
+
+wb = openpyxl.load_workbook(LTP_PREV_PATH)
+sheet_ltp_prev = wb["Sheet1"]
 
 for symbol in SHARE_LIST:
     try:
@@ -39,6 +44,7 @@ for symbol in SHARE_LIST:
             response = requests.get(URL, headers=HEADERS, params=PARAMS)
         except:
             print(f"Error in getting SYMBOL data for: {symbol}")
+            idx += 1
             continue
 
         json_data = json.loads(response.text)
@@ -202,22 +208,20 @@ for symbol in SHARE_LIST:
             response = requests.get(URL, headers=HEADERS, params=PARAMS)
         except:
             print(f"Error in getting SYMBOL data for: {symbol}")
+            idx += 1
             continue
 
         json_data = json.loads(response.text)
 
         data_list = json_data['data']['candles']
 
-        # 1. LTP: 2nd last column of the LAST candle
-        # Index -1 is the last candle, -2 is the second to last column
-        ltp = data_list[-1][-2]
-
-        # 2. PREV: 2nd last column of the SECOND LAST candle
-        prev = data_list[-2][-2]
-
         # 3. VOL: Last item of the LAST candle divided by 100,000
         # // is floor division
         vol = data_list[-1][-1] // 100000
+
+        # LTP AND PREV
+        ltp = sheet_ltp_prev.cell(idx, 2).value
+        prev = sheet_ltp_prev.cell(idx, 3).value
 
         # -----------------------------------
         # FETCH 15-MIN DATA
@@ -402,8 +406,8 @@ for symbol in SHARE_LIST:
             # data filling
             sheet.cell(input_row, 2).value = day_high # high
             sheet.cell(input_row, 3).value = day_low # low
-            sheet.cell(input_row, 4).value = close  # close
-            sheet.cell(input_row, 5).value = close  # LTP
+            sheet.cell(input_row, 4).value = ltp  # close
+            sheet.cell(input_row, 5).value = ltp  # LTP
             sheet.cell(input_row, 6).value = vol  # vol
             sheet.cell(input_row, 7).value = close_925  # 9:25 close
 
@@ -445,9 +449,10 @@ for symbol in SHARE_LIST:
             if symbol in COPY_TO_CASH:
                 wb.save(file_daily_cash)
                 wb.save(file_daily_cash_raghav)
+        idx += 1
+        print("<------------------------------------------------------>")
 
-            print("<------------------------------------------------------>")
     except Exception as e:
+        idx += 1
         print(f"\033[31mError occured for symbol: {symbol}\033[0m")
         print(f"\033[31mException: {e}\033[0m")
-

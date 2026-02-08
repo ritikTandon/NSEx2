@@ -549,6 +549,7 @@ def get_last_row(sheet, empty=True):
 def weekly_update(val=0):
     for share in SHARE_LIST:
         path = rf'E:\Daily Data work\DAILY\{share}.xlsx'
+        file_daily_raghav = rf"C:\Users\RITIK\Desktop\STUDY MATERIAL\CASH\DAILY\{share}.xlsx"
 
         wb = xl.load_workbook(path)
 
@@ -601,13 +602,14 @@ def weekly_update(val=0):
         w_sheet.cell(w_row, 4).number_format = '0'
 
         wb.save(path)
-        # wb.save('m_test.xlsx')
+        wb.save(file_daily_raghav)
         print(f'{share} done')
 
 
 def monthly_update():
     for share in SHARE_LIST:
         path = rf'E:\Daily Data work\DAILY\{share}.xlsx'
+        file_daily_raghav = rf"C:\Users\RITIK\Desktop\STUDY MATERIAL\CASH\DAILY\{share}.xlsx"
 
         wb = xl.load_workbook(path)
 
@@ -701,6 +703,8 @@ def monthly_update():
         m_sheet.cell(m_row, 5).alignment = alignment
 
         wb.save(path)
+        wb.save(file_daily_raghav)
+
         # wb.save('m_test.xlsx')
         print(f'{share} done')
 
@@ -708,6 +712,7 @@ def monthly_update():
 def closing_update():
     for share in SHARE_LIST:
         path = rf'E:\Daily Data work\DAILY\{share}.xlsx'
+        file_daily_raghav = rf"C:\Users\RITIK\Desktop\STUDY MATERIAL\CASH\DAILY\{share}.xlsx"
 
         wb = xl.load_workbook(path)
 
@@ -789,6 +794,7 @@ def closing_update():
         cl_sheet.cell(cl_row, 5).alignment = alignment
 
         wb.save(path)
+        wb.save(file_daily_raghav)
         # wb.save('m_test.xlsx')
         print(f'{share} done')
 
