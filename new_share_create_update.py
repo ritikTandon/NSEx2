@@ -720,6 +720,7 @@ def closing_update():
         cl_sheet = wb['Cl']
 
         cl_row = get_last_row(cl_sheet)
+        print(f"closing row:{cl_row}")
         d_row = get_last_row(d_sheet, empty=False)
         # d_row = 1130  # 1090 1110 1130
 

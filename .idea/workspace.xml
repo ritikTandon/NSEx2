@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="090927f3-1c0c-4ef5-8dcd-272431b2a5ad" name="Changes" comment="modification">
+    <list default="true" id="090927f3-1c0c-4ef5-8dcd-272431b2a5ad" name="Changes" comment="savbiong 1 min nifty and bn">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ltp_prev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ltp_prev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NseEx2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NseEx2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daily_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instruments.py" beforeDir="false" afterPath="$PROJECT_DIR$/instruments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ltp_prev.py" beforeDir="false" afterPath="$PROJECT_DIR$/ltp_prev.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ltp_prev.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ltp_prev.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new_share_create_update.py" beforeDir="false" afterPath="$PROJECT_DIR$/new_share_create_update.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,25 +53,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.constants.executor&quot;: &quot;Run&quot;,
-    &quot;Python.daily_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.instruments.executor&quot;: &quot;Run&quot;,
-    &quot;Python.login.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ltp_prev.executor&quot;: &quot;Run&quot;,
-    &quot;Python.new_share_create.executor&quot;: &quot;Run&quot;,
-    &quot;Python.new_share_create_update.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/RITIK/PycharmProjects/NSEexCopy&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.constants.executor": "Run",
+    "Python.daily_data.executor": "Run",
+    "Python.instruments.executor": "Run",
+    "Python.login.executor": "Run",
+    "Python.ltp_prev.executor": "Run",
+    "Python.new_share_create.executor": "Run",
+    "Python.new_share_create_update.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/RITIK/PycharmProjects/NSEexCopy",
+    "settings.editor.selected.configurable": "preferences.general"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\RITIK\PycharmProjects\NseEx2" />
@@ -109,7 +109,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769518893465</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="modification to ltp prev">
+      <option name="closed" value="true" />
+      <created>1770534539014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770534539014</updated>
+    </task>
+    <task id="LOCAL-00004" summary="savbiong 1 min nifty and bn">
+      <option name="closed" value="true" />
+      <created>1770534577622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770534577622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -129,6 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
     <MESSAGE value="modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification" />
+    <MESSAGE value="modification to ltp prev" />
+    <MESSAGE value="savbiong 1 min nifty and bn" />
+    <option name="LAST_COMMIT_MESSAGE" value="savbiong 1 min nifty and bn" />
   </component>
 </project>

@@ -22,12 +22,12 @@ kite = KiteConnect(api_key=api_key)
 kite.set_access_token(access_token)
 
 
-start_row = 9
+start_row = 10
 start_col = 6  # Column F
 idx = 2   # ltp prev sheet iterator
 
-wb = openpyxl.load_workbook(LTP_PREV_PATH)
-sheet_ltp_prev = wb["Sheet1"]
+wb_ltp_prev = openpyxl.load_workbook(LTP_PREV_PATH)
+sheet_ltp_prev = wb_ltp_prev["Sheet1"]
 
 for symbol in SHARE_LIST:
     try:
@@ -218,9 +218,15 @@ for symbol in SHARE_LIST:
         # // is floor division
         vol = data_list[-1][-1] // 100000
 
-        # LTP AND PREV
+        # LTP AND PREV LTP, HIGH AND LOW
         ltp = sheet_ltp_prev.cell(idx, 2).value
         prev = sheet_ltp_prev.cell(idx, 3).value
+        prev_day_high = sheet_ltp_prev.cell(idx, 4).value
+        prev_day_low = sheet_ltp_prev.cell(idx, 5).value
+
+        # entering current day high and low in ltp_prev sheet high low
+        sheet_ltp_prev.cell(idx, 4).value = day_high
+        sheet_ltp_prev.cell(idx, 5).value = day_low
 
         # -----------------------------------
         # FETCH 15-MIN DATA
@@ -262,19 +268,29 @@ for symbol in SHARE_LIST:
         ws15.cell(6, 7).value = "HIGH"
         ws15.cell(6, 8).value = "LOW"
         ws15.cell(6, 9).value = "LTP"
-        ws15.cell(6, 10).value = "PREV"
 
-        ws15.cell(8, 6).value = "Time"
-        ws15.cell(8, 7).value = "High Rate"
-        ws15.cell(8, 8).value = "Low Rate"
-        ws15.cell(8, 9).value = "Close Rate"
+        ws15.cell(8, 6).value = "PREV"
+
+        ws15.cell(9, 6).value = "Time"
+        ws15.cell(9, 7).value = "High Rate"
+        ws15.cell(9, 8).value = "Low Rate"
+        ws15.cell(9, 9).value = "Close Rate"
 
         # FIXED VALUES
         ws15.cell(7, 6).value = close_925
         ws15.cell(7, 7).value = day_high
         ws15.cell(7, 8).value = day_low
         ws15.cell(7, 9).value = ltp
-        ws15.cell(7, 10).value = prev
+
+        ws15.cell(8, 7).value = prev_day_high
+        ws15.cell(8, 8).value = prev_day_low
+        ws15.cell(8, 9).value = prev
+
+        # cell highlighting
+        ws15.cell(8, 6).fill = yellow_fill
+        ws15.cell(8, 7).fill = yellow_fill
+        ws15.cell(8, 8).fill = yellow_fill
+        ws15.cell(8, 9).fill = yellow_fill
 
         # WRITE DATA (NO HEADERS)
         for r_idx, row in enumerate(
@@ -345,19 +361,29 @@ for symbol in SHARE_LIST:
         ws30.cell(6, 7).value = "HIGH"
         ws30.cell(6, 8).value = "LOW"
         ws30.cell(6, 9).value = "LTP"
-        ws30.cell(6, 10).value = "PREV"
 
-        ws30.cell(8, 6).value = "Time"
-        ws30.cell(8, 7).value = "High Rate"
-        ws30.cell(8, 8).value = "Low Rate"
-        ws30.cell(8, 9).value = "Close Rate"
+        ws30.cell(8, 6).value = "PREV"
+
+        ws30.cell(9, 6).value = "Time"
+        ws30.cell(9, 7).value = "High Rate"
+        ws30.cell(9, 8).value = "Low Rate"
+        ws30.cell(9, 9).value = "Close Rate"
 
         # FIXED VALUES
         ws30.cell(7, 6).value = close_925
         ws30.cell(7, 7).value = day_high
         ws30.cell(7, 8).value = day_low
         ws30.cell(7, 9).value = ltp
-        ws30.cell(7, 10).value = prev
+
+        ws30.cell(8, 7).value = prev_day_high
+        ws30.cell(8, 8).value = prev_day_low
+        ws30.cell(8, 9).value = prev
+
+        # cell highlighting
+        ws30.cell(8, 6).fill = yellow_fill
+        ws30.cell(8, 7).fill = yellow_fill
+        ws30.cell(8, 8).fill = yellow_fill
+        ws30.cell(8, 9).fill = yellow_fill
 
         # WRITE DATA
         for r_idx, row in enumerate(
@@ -455,3 +481,5 @@ for symbol in SHARE_LIST:
         idx += 1
         print(f"\033[31mError occured for symbol: {symbol}\033[0m")
         print(f"\033[31mException: {e}\033[0m")
+
+wb_ltp_prev.save(LTP_PREV_PATH)

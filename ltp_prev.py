@@ -1,7 +1,8 @@
 import openpyxl as xl
 import requests
 
-from constants import LTP_DATA_API, HEADERS, FO_SYMBOLS_WITH_EXPIRY, FO_SYMBOLS, EQ_SYMBOLS, LTP_PREV_PATH
+from constants import LTP_DATA_API, HEADERS, FO_SYMBOLS_WITH_EXPIRY, FO_SYMBOLS, EQ_SYMBOLS, LTP_PREV_PATH, \
+    LTP_PREV_BACKUP_PATH
 from utils import sanitize_url
 
 wb = xl.load_workbook(LTP_PREV_PATH)
@@ -49,3 +50,4 @@ for symbol in EQ_SYMBOLS | FO_SYMBOLS:
     i += 1
 
     wb.save(LTP_PREV_PATH)
+    wb.save(LTP_PREV_BACKUP_PATH)
