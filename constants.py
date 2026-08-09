@@ -4,14 +4,14 @@ from openpyxl.styles import Font, Alignment
 
 load_dotenv()
 
-DATE = r"13.07.26"
-MONTH = r"JUL"
+DATE = r"10.08.26"
+MONTH = r"AUG"
 YEAR = r"2026"
 
-APPEND = 762  # 762 is 13-JUL-26
+APPEND = 782  # 782 is 10-AUG-26
 
 # share name to expiry symbol mapping to get LTP price
-FO_SYMBOLS_WITH_EXPIRY = {'NIFTY': 'NIFTY26JULFUT', 'BANKNIFTY': 'BANKNIFTY26JULFUT'} # check fut march sysmbols
+FO_SYMBOLS_WITH_EXPIRY = {'NIFTY': 'NIFTY26AUGFUT', 'BANKNIFTY': 'BANKNIFTY26AUGFUT'} # check fut march sysmbols
 
 NO_FORMAT_LIST = ['APOLLOTYRE', 'BANDHANBANK', 'BANKBARODA', 'COAL INDIA', 'DLF CHL', 'TATAMOTOR CHL',
                   'TATASTEEL', 'TATAPOWER', 'M&MFINANCE', 'FEDRAL BANK', 'HINDALCO', 'NTPC']
@@ -84,7 +84,7 @@ HEADERS = {
 
 # NIFTY and BN symbols but continuous = 1 for appi calls so that we don't need to keep updating symbols
 # {SYMBOL: INSTRUMENT_TOKEN} dictionary for all F&O shares
-FO_SYMBOLS = {'NIFTY': (15639810, 0), 'BANKNIFTY': (15638530, 0)}
+FO_SYMBOLS = {'NIFTY': (14866434, 0), 'BANKNIFTY': (14865154, 0)}
 
 EQ_INSTRUMENTS_URL = "https://api.kite.trade/instruments/NSE"
 FO_INSTRUMENTS_URL = "https://api.kite.trade/instruments/NFO"
